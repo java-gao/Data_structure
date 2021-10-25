@@ -3,24 +3,25 @@ class Node:
         self.elem = elem
         self.next = None
 
+
 class Linklist:
 
-    def __init__(self,node=None):
+    def __init__(self, node=None):
         self._head = node
         self.len = 0
 
     def listLength(self):
         return self.len
 
-    def listAdd(self,elem):
-        '''头插法'''
+    def listAdd(self, elem):
+        """头插法"""
         node = Node(elem)
         node.next = self._head
         self._head = node
         self.len += 1
 
-    def listAppend(self,elem):
-        '''尾插法'''
+    def listAppend(self, elem):
+        """尾插法"""
         node = Node(elem)
         cur = self._head
         if cur is None:
@@ -31,24 +32,24 @@ class Linklist:
             cur.next = node
         self.len += 1
 
-    def listInsert(self,location,elem):
-        '''在指定的位置插入元素'''
+    def listInsert(self, location, elem):
+        """在指定的位置插入元素"""
         if location <= 1:
             self.listAdd(elem)
-        elif location >self.len:
+        elif location > self.len:
             self.listAppend(elem)
         else:
             node = Node(elem)
             cur = self._head
             count = 1
-            while count < location -1:
+            while count < location - 1:
                 cur = cur.next
                 count += 1
             node.next = cur.next
             cur.next = node
             self.len += 1
 
-    def listDelete(self,location):
+    def listDelete(self, location):
         cur = self._head
         pre = None
         if self._head is None:
@@ -69,7 +70,7 @@ class Linklist:
 
         self.len -= 1
 
-    def locateElem(self,elem):
+    def locateElem(self, elem):
         count = 1
         cur = self._head
         while cur:
@@ -80,7 +81,7 @@ class Linklist:
                 cur = cur.next
         return -1
 
-    def getElem(self,location):
+    def getElem(self, location):
         cur = self._head
         if location < 1 or location > self.len:
             raise Exception('位置非法')
@@ -93,7 +94,7 @@ class Linklist:
     def listPrint(self):
         cur = self._head
         while cur:
-            print(cur.elem, end = '->')
+            print(cur.elem, end='->')
             cur = cur.next
 
     @property
