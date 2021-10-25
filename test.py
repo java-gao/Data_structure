@@ -31,9 +31,14 @@ def linklist_test():
     for j in range(6):
         # list1.listAppend(j)
         list1.listAdd(j)
-    list1.listInsert(3, 7)
+    list1.listInsert(7, 7)
     list1.listPrint()
     print(list1.len)
+    list1.listDelete(4)
+    list1.listPrint()
+    print(list1.len)
+    print(list1.locateElem(9))
+    print(list1.getElem(7))
 
 
 linklist_test()

@@ -34,9 +34,9 @@ class Linklist:
     def listInsert(self,location,elem):
         '''在指定的位置插入元素'''
         if location <= 1:
-            listappend(elem)
+            self.listAdd(elem)
         elif location >self.len:
-            listinsert(elem)
+            self.listAppend(elem)
         else:
             node = Node(elem)
             cur = self._head
@@ -46,6 +46,7 @@ class Linklist:
                 count += 1
             node.next = cur.next
             cur.next = node
+            self.len += 1
 
     def listDelete(self,location):
         cur = self._head
@@ -53,21 +54,24 @@ class Linklist:
         if self._head is None:
             raise Exception('列表为空')
 
-        if loation < 1 or location > self.len:
+        if location < 1 or location > self.len:
             raise Exception('删除位置非法')
         elif location == 1:
             self._head = cur.next
         else:
             count = 1
             while count < location:
-                if count == location - 2:
+                if count == location - 1:
                     pre = cur
                 cur = cur.next
                 count += 1
             pre.next = cur.next
 
+        self.len -= 1
+
     def locateElem(self,elem):
         count = 1
+        cur = self._head
         while cur:
             if cur.elem == elem:
                 return count
@@ -83,12 +87,13 @@ class Linklist:
         count = 1
         while count < location:
             cur = cur.next
+            count += 1
         return cur.elem
 
     def listPrint(self):
         cur = self._head
         while cur:
-            print(cur.elem)
+            print(cur.elem, end = '->')
             cur = cur.next
 
     @property
