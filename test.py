@@ -38,7 +38,7 @@ def linklist_test():
     list1.listPrint()
     print(list1.len)
     print(list1.locateElem(9))
-    print(list1.getElem(6))
+    print(list1.getElem(4))
 
 
 linklist_test()
