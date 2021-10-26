@@ -1,5 +1,6 @@
 import Sqlist
 import Linklist
+import Staticlist
 
 
 def sqlist_test():
@@ -41,4 +42,21 @@ def linklist_test():
     print(list1.getElem(7))
 
 
-linklist_test()
+def staticlist_test():
+    list1 = Staticlist.Staticlist(6)
+
+    for j in range(6):
+        # list1.list_append(j)
+        list1.list_add(j)
+    # list1.list_print()
+    list1.list_delete(3)
+    list1.list_delete(3)
+    list1.list_print()
+    # print(list1.get_elem(3))
+    print(list1.locate_elem(3))
+    # list1.list_insert(3, 9)
+    # print(list1.len)
+
+
+staticlist_test()
+
