@@ -1,6 +1,7 @@
 import Sqlist
 import Linklist
 import Staticlist
+import Stack
 
 
 def sqlist_test():
@@ -58,5 +59,23 @@ def staticlist_test():
     # print(list1.len)
 
 
-staticlist_test()
+def stack_test():
+    stack = Stack.Stack(6)
+    for j in range(6):
+        stack.push(j)
+    stack.stack_print()
+    stack.pop()
+    stack.push(6)
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    stack.pop()
+    stack.stack_print()
+    # print(stack.get_top())
+    print(stack.stack_length())
 
+
+stack_test()

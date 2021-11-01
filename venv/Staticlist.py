@@ -3,6 +3,7 @@ class Node:
         self.data = elem
         self.next = None
 
+
 class Staticlist:
 
     def __init__(self, size):
@@ -28,7 +29,7 @@ class Staticlist:
 
     def free_sll(self, location):
         self.link[location].next = self.link[0].next
-        self.link[location].data =None
+        self.link[location].data = None
         self.link[0].next = location
 
     def listlen(self):
@@ -76,7 +77,7 @@ class Staticlist:
 
             self.len += 1
 
-    def list_insert(self, location,elem):
+    def list_insert(self, location, elem):
         if self.len > self.maxsize:
             raise Exception("静态链表空间已满")
         if location < 1 or location > self.len:
@@ -110,7 +111,7 @@ class Staticlist:
             else:
                 count = 1
                 while count < location:
-                    if count == location -1:
+                    if count == location - 1:
                         pre = cur
                     cur = self.link[cur].next
                     count += 1
@@ -144,7 +145,6 @@ class Staticlist:
         cur = self.link[self.maxsize + 1].next
         count = 1
         while count < self.len + 1:
-            print(self.link[cur].data, end = '->')
+            print(self.link[cur].data, end='->')
             cur = self.link[cur].next
             count += 1
-
