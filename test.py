@@ -2,6 +2,7 @@ import Sqlist
 import Linklist
 import Staticlist
 import Stack
+import SqQueue
 
 
 def sqlist_test():
@@ -78,4 +79,27 @@ def stack_test():
     print(stack.stack_length())
 
 
-stack_test()
+def sqqueue_test():
+    sqqueue = SqQueue.SqQueue(6)
+    print(sqqueue.item)
+    for j in range(5):
+        sqqueue.Enqueue(j)
+    sqqueue.QueuePrint()
+    sqqueue.Dequeue()
+    sqqueue.Dequeue()
+    sqqueue.Dequeue()
+    sqqueue.Dequeue()
+    print('---------------')
+    print(sqqueue.item)
+    sqqueue.QueuePrint()
+    sqqueue.Enqueue(7)
+    sqqueue.Enqueue(8)
+    sqqueue.Enqueue(9)
+    print('---------------')
+    print(sqqueue.item)
+    print(sqqueue.front)
+    print(sqqueue.rear)
+    print(sqqueue.len)
+    sqqueue.QueuePrint()
+
+sqqueue_test()
