@@ -12,7 +12,7 @@ class Queue:
         return self.item.pop(0)
 
     def QueueEmpty(self):
-        return len(self.item) is 0
+        return len(self.item) == 0
 
     def QueueLength(self):
         return len(self.item)

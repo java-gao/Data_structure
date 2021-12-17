@@ -3,6 +3,8 @@ import Linklist
 import Staticlist
 import Stack
 import SqQueue
+import tree
+import graph
 
 
 def sqlist_test():
@@ -102,4 +104,85 @@ def sqqueue_test():
     print(sqqueue.len)
     sqqueue.QueuePrint()
 
-sqqueue_test()
+
+# ABDH##I##E##CF#J##G##A
+def tree_test():
+    tree1 = tree.Tree()
+    tree.create_bitree(tree1, True)
+    tree.inordertraverse(tree1.root)
+    tree.intreading(tree1.root)
+    tree.inordertraverse_thr(tree1.root)
+    # print('-------------------')
+    # tree.inordertraverse(tree1.root)
+    # print('-------------------')
+    # tree.postordertraverse(tree1.root)
+
+
+def graph_test():
+    graph1 = graph.graph()
+    graph1.vertex = ['v0', 'v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'v7', 'v8']
+    graph1.edge = [[0, 10, 99, 99, 99, 11, 99, 99, 99],
+                   [10, 0, 18, 99, 99, 99, 16, 99, 12],
+                   [99, 18, 0, 22, 99, 99, 99, 99, 8],
+                   [99, 99, 22, 0, 20, 99, 99, 16, 21],
+                   [99, 99, 99, 20, 0, 26, 99, 7, 99],
+                   [11, 99, 99, 99, 26, 0, 17, 99, 99],
+                   [99, 16, 99, 99, 99, 17, 0, 19, 99],
+                   [99, 99, 99, 16, 7, 99, 19, 0, 99],
+                   [99, 12, 8, 21, 99, 99, 99, 99, 0]]
+
+    # graph1.dfs_traverse()
+    # graph1.bfs_traverse()
+    # graph1.minispantree_prim()
+    # graph1.minispantree_kruskal()
+    # graph1.minispantree_kruskal()
+    # graph1.shoresetpath_dijkstra()
+    # [0, 10, 28, 43, 37, 11, 26, 44, 22]
+    # [0, 0, 1, 8, 5, 0, 1, 4, 1]
+    # graph1.shoresetpath_floyd()
+
+    vertex0 = graph.vertexNode('v0', 0)
+    vertex1 = graph.vertexNode('v1', 1)
+    vertex2 = graph.vertexNode('v2', 1)
+    vertex3 = graph.vertexNode('v3', 2)
+    vertex4 = graph.vertexNode('v4', 2)
+    vertex5 = graph.vertexNode('v5', 1)
+    vertex6 = graph.vertexNode('v6', 1)
+    vertex7 = graph.vertexNode('v7', 2)
+    vertex8 = graph.vertexNode('v8', 1)
+    vertex9 = graph.vertexNode('v9', 2)
+    edge1 = graph.edgeNode(2, 4)
+    edge2 = graph.edgeNode(4, 6)
+    edge3 = graph.edgeNode(5, 7)
+    edge4 = graph.edgeNode(4, 3)
+    edge5 = graph.edgeNode(7, 4)
+    edge6 = graph.edgeNode(7, 6)
+    edge7 = graph.edgeNode(9, 2)
+    edge8 = graph.edgeNode(8, 5)
+    edge9 = graph.edgeNode(9, 3)
+    edge10 = graph.edgeNode(1, 3)
+    edge11 = graph.edgeNode(3, 5)
+    edge12 = graph.edgeNode(3, 8)
+    edge13 = graph.edgeNode(6, 9)
+
+    vertex0.first_edge = edge1
+    edge1.next1 = edge10
+    vertex1.first_edge = edge2
+    edge2.next1 = edge11
+    vertex2.first_edge = edge3
+    edge3.next1 = edge12
+    vertex3.first_edge = edge4
+    vertex4.first_edge = edge5
+    edge5.next1 = edge13
+    vertex5.first_edge = edge6
+    vertex6.first_edge = edge7
+    vertex7.first_edge = edge8
+    vertex8.first_edge = edge9
+
+    vertexs = [vertex0, vertex1, vertex2, vertex3, vertex4, vertex5, vertex6, vertex7, vertex8, vertex9]
+    edges = [edge1, edge2, edge3, edge4, edge5, edge6, edge7, edge8, edge9, edge10, edge11, edge12, edge13]
+    # graph.topologicalsort(vertexs, edges)
+    graph.critical_path(vertexs, edges)
+
+
+graph_test()

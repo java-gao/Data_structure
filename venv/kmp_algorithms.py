@@ -35,6 +35,6 @@ def index_kmp(sub_string, string, pos):
         return -1
 
 
-t = 'abcabcde'
-a = index_kmp(t, 'abcabcghi', 0)
+t = 'abcabc'
+a = index_kmp(t, 'cabcabc', 0)
 print(a)
