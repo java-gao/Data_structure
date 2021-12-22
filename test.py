@@ -5,6 +5,7 @@ import Stack
 import SqQueue
 import tree
 import graph
+import sort
 
 
 def sqlist_test():
@@ -185,4 +186,19 @@ def graph_test():
     graph.critical_path(vertexs, edges)
 
 
-graph_test()
+def sort_test():
+    # data = [9, 1, 5, 8, 3, 7, 4, 6, 2]
+    # sort.bubble_sort(data)
+    # sort.select_sort(data)
+    # sort.insert_sort(data)
+    data = [50, 10, 90, 30, 70, 40, 80, 60, 20]
+    # sort.shell_sort(data)
+    # sort.heap_sort(data)
+    # sort.merge_sort(data)
+    # sort.merge_sort2(data)
+    sort.quick_sort(data)
+    print(data)
+    # print(data)
+
+
+sort_test()
